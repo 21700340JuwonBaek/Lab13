@@ -1,33 +1,33 @@
 
 
 typedef struct {
-    char name[30]; //ì‹ë‹¹ëª…
-    float reputation;//í‰ì 
-    int price; //ê°€ê²©
+    char name[30]; //½Ä´ç¸í
+    float reputation;//ÆòÁ¡
+    int price; //°¡°İ
 } Restaurant;
 
-void readMenu(); //ì „ì²´ ë©”ë‰´(ì„ íƒì§€)ë¥¼ ë³´ì—¬ì£¼ëŠ” í•¨ìˆ˜
+void readMenu(); //ÀüÃ¼ ¸Ş´º(¼±ÅÃÁö)¸¦ º¸¿©ÁÖ´Â ÇÔ¼ö
 
-void listRes(Restaurant  s[], int count); //ì „ì²´ ë¦¬ìŠ¤íŠ¸ë¥¼ ë³´ì—¬ì£¼ëŠ” í•¨ìˆ˜
+void listRes(Restaurant  s[], int count); //ÀüÃ¼ ¸®½ºÆ®¸¦ º¸¿©ÁÖ´Â ÇÔ¼ö
 
-int addData(Restaurant  *s); //ìƒˆë¡œìš´ ì‹ë‹¹ì„ ì¶”ê°€í•˜ëŠ” í•¨ìˆ˜
+int addData(Restaurant  *s); //»õ·Î¿î ½Ä´çÀ» Ãß°¡ÇÏ´Â ÇÔ¼ö
 
-int updateData(Restaurant  *s, int count); //ê¸°ì¡´ ë“±ë¡ëœ ì‹ë‹¹ì„ ìˆ˜ì •í•˜ëŠ” í•¨ìˆ˜
+int updateData(Restaurant  *s, int count); //±âÁ¸ µî·ÏµÈ ½Ä´çÀ» ¼öÁ¤ÇÏ´Â ÇÔ¼ö
 
-int deleteData(Restaurant  *s, int count); //ë“±ë¡ëœ ì‹ë‹¹ì„ ì œê±°í•˜ëŠ” í•¨ìˆ˜
+int deleteData(Restaurant  *s, int count); //µî·ÏµÈ ½Ä´çÀ» Á¦°ÅÇÏ´Â ÇÔ¼ö
 
-void SaveData(Restaurant  *s, int count); //Fileì— ì €ì¥í•˜ëŠ” í•¨ìˆ˜
+void SaveData(Restaurant  *s, int count); //File¿¡ ÀúÀåÇÏ´Â ÇÔ¼ö
 
-int loadData(Restaurant  *s); //ì €ì¥ëœ íŒŒì¼ì„ ë¶ˆëŸ¬ì˜¤ëŠ” í•¨ìˆ˜
+int loadData(Restaurant  *s); //ÀúÀåµÈ ÆÄÀÏÀ» ºÒ·¯¿À´Â ÇÔ¼ö
 
-void SearchData(Restaurant  *s, int count); //ê²€ìƒ‰í•˜ëŠ” í•¨ìˆ˜
+void SearchData(Restaurant  *s, int count); //°Ë»öÇÏ´Â ÇÔ¼ö
 
-void SearchPrice(Restaurant s[],int count);//ê°€ê²©ìœ¼ë¡œ ê²€ìƒ‰í•˜ê¸°
+void SearchPrice(Restaurant s[],int count);//°¡°İÀ¸·Î °Ë»öÇÏ±â
 
-void SearchReputaion(Restaurant s[],int count);//í‰ì ìœ¼ë¡œ ê²€ìƒ‰í•˜ê¸°
+void SearchReputaion(Restaurant s[],int count);//ÆòÁ¡À¸·Î °Ë»öÇÏ±â
 
-void SearchName(Restaurant s[],int count);//ì´ë¦„ìœ¼ë¡œ ê²€ìƒ‰í•˜ê¸°
+void SearchName(Restaurant s[],int count);//ÀÌ¸§À¸·Î °Ë»öÇÏ±â
 
-void sortName(Restaurant  *s, int count); //ì‹ë‹¹ ì´ë¦„ì„ ì •ë ¬í•˜ëŠ” í•¨ìˆ˜
+void sortName(Restaurant  *s, int count); //½Ä´ç ÀÌ¸§À» Á¤·ÄÇÏ´Â ÇÔ¼ö
 
-void recommand(Restaurant *s, int count); //ëœë¤ìœ¼ë¡œ ì‹ë‹¹ì„ ì¶”ì²œí•´ì£¼ëŠ” í•¨ìˆ˜
+void recommand(Restaurant *s, int count);
