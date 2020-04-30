@@ -30,4 +30,6 @@ void SearchName(Restaurant s[],int count);//이름으로 검색하기
 
 void sortName(Restaurant  *s, int count); //식당 이름을 정렬하는 함수
 
+void sortPrice(Restaurant *s, int count);//식당의 목록을 가격순으로 
+
 void recommand(Restaurant *s, int count); //랜덤으로 식당을 추천해주는 함수
