@@ -7,32 +7,32 @@
 
 
 void readMenu(){
-    printf("1.¾ÆÀÌÅÛ Ãß°¡\
-    \n2.¾ÆÀÌÅÛ Á¶È¸\
-    \n3.¾ÆÀÌÅÛ ¾÷µ¥ÀÌÆ®\
-    \n4.¾ÆÀÌÅÛ »èÁ¦\
+    printf("1.ì‹ë‹¹ ì¶”ê°€\
+    \n2.ì‹ë‹¹ ì¡°íšŒ\
+    \n3.ì‹ë‹¹ ì—…ë°ì´íŠ¸\
+    \n4.ì‹ë‹¹ ì‚­ì œ\
     \n5.Save!\
     \n6.Load!\
-    \n7.°Ë»ö\
-    \n8.¿À´ÃÀÇ ÃßÃµ¸Ş´º\
-    \n9.ÀÌ¸§¼øÀ¸·Î ½Ä´ç Á¤·Ä\
-    \n0.Á¾·á\n");
+    \n7.ê²€ìƒ‰\
+    \n8.ì˜¤ëŠ˜ì˜ ì¶”ì²œë©”ë‰´\
+    \n9.ì´ë¦„ìˆœìœ¼ë¡œ ì‹ë‹¹ ì •ë ¬\
+    \n0.ì¢…ë£Œ\n");
 
 }
 
 
 void listRes(Restaurant  s[], int count){
-    if(count == 0) {printf("µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù!\n\n");return;}
-    printf("No.      ÀÌ¸§       °¡°İ        ÆòÁ¡\n");
+    if(count == 0) {printf("ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤!\n\n");return;}
+    printf("No.      ì´ë¦„       ê°€ê²©        í‰ì \n");
     for(int i=0; i<count;i++){
-        printf("%d %15s   %5d¿ø     %5.1fÁ¡\n",i+1,s[i].name,s[i].price ,s[i].reputation);
+        printf("%d %15s   %5dì›     %5.1fì \n",i+1,s[i].name,s[i].price ,s[i].reputation);
     }
 printf("\n");
     }
 
 
     int addData(Restaurant  *s){
-    printf("¾ÆÀÌÅÛÀÇ ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä\n");
+    printf("ì•„ì´í…œì˜ ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”\n");
     char enter;
     enter = getchar();
 
@@ -40,35 +40,35 @@ printf("\n");
     s->name[strlen(s->name)-1] = '\0';
 
    do{
-    printf("½Ä´ç À½½ÄÀÇ Æò±Õ °¡°İÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä\n");
+    printf("ì‹ë‹¹ ìŒì‹ì˜ í‰ê·  ê°€ê²©ì„ ì…ë ¥í•´ì£¼ì„¸ìš”\n");
     scanf("%d",&s->price);
-    if(s->price<=0)printf("´Ù½ÃÀÔ·ÂÇØÁÖ¼¼¿ä!\n");
+    if(s->price<=0)printf("ë‹¤ì‹œì…ë ¥í•´ì£¼ì„¸ìš”!\n");
     }while(s->price<=0);
 
     do{
-    printf("½Ä´çÀÇ ÆòÁ¡À» ÀÔ·ÂÇØÁÖ¼¼¿ä(0~5±îÁö ¼Ò¼öÁ¡ ÀÔ·Â °¡´É!)\n");
+    printf("ì‹ë‹¹ì˜ í‰ì ì„ ì…ë ¥í•´ì£¼ì„¸ìš”(0~5ê¹Œì§€ ì†Œìˆ˜ì  ì…ë ¥ ê°€ëŠ¥!)\n");
     scanf("%f",&s->reputation);
-    if(s->reputation>5||s->reputation<0)printf("´Ù½ÃÀÔ·ÂÇØÁÖ¼¼¿ä!\n");
+    if(s->reputation>5||s->reputation<0)printf("ë‹¤ì‹œì…ë ¥í•´ì£¼ì„¸ìš”!\n");
     }while(s->reputation>5||s->reputation<0);
 
-    printf("½Ä´çÀÌ ¸ñ·Ï¿¡ Ãß°¡µÇ¾ú½À´Ï´Ù!\n\n");
+    printf("ì‹ë‹¹ì´ ëª©ë¡ì— ì¶”ê°€ë˜ì—ˆìŠµë‹ˆë‹¤!\n\n");
     return 0;
 
 }
 
 
 int updateData(Restaurant s[], int count){
-    if(count == 0) {printf("µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù!\n\n");return -1;}
+    if(count == 0) {printf("ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤!\n\n");return -1;}
     listRes(s,count);
     int select;
-    printf("¼öÁ¤ÇÒ ½Ä´çÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+    printf("ìˆ˜ì •í•  ì‹ë‹¹ì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”");
     scanf("%d",&select);
     if(select< 1 || select > count) {
-    printf("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù!\n");
+    printf("ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤!\n");
     return -1;
 
 }
-   printf("»õ ½Ä´ç ÀÌ¸§Àº?\n");
+   printf("ìƒˆ ì‹ë‹¹ ì´ë¦„ì€?\n");
       char enter;
     enter = getchar();
    fgets(s[select-1].name,30,stdin);
@@ -76,45 +76,45 @@ int updateData(Restaurant s[], int count){
 
     
    do{
-    printf("½Ä´ç À½½ÄÀÇ Æò±Õ °¡°İÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä\n");
+    printf("ì‹ë‹¹ ìŒì‹ì˜ í‰ê·  ê°€ê²©ì„ ì…ë ¥í•´ì£¼ì„¸ìš”\n");
     scanf("%d",&s[select-1  ].price);
-    if(s[select-1  ].price<=0)printf("´Ù½ÃÀÔ·ÂÇØÁÖ¼¼¿ä!\n");
+    if(s[select-1  ].price<=0)printf("ë‹¤ì‹œì…ë ¥í•´ì£¼ì„¸ìš”!\n");
     }while(s[select-1  ].price<=0);
 
     do{
-    printf("½Ä´çÀÇ ÆòÁ¡À» ÀÔ·ÂÇØÁÖ¼¼¿ä(0~5±îÁö ¼Ò¼öÁ¡ ÀÔ·Â °¡´É!)\n");
+    printf("ì‹ë‹¹ì˜ í‰ì ì„ ì…ë ¥í•´ì£¼ì„¸ìš”(0~5ê¹Œì§€ ì†Œìˆ˜ì  ì…ë ¥ ê°€ëŠ¥!)\n");
     scanf("%f",&s[select-1  ].reputation);
-    if(s[select-1  ].reputation>5||s[select-1  ].reputation<0)printf("´Ù½ÃÀÔ·ÂÇØÁÖ¼¼¿ä!\n");
+    if(s[select-1  ].reputation>5||s[select-1  ].reputation<0)printf("ë‹¤ì‹œì…ë ¥í•´ì£¼ì„¸ìš”!\n");
     }while(s[select-1  ].reputation>5||s[select-1  ].reputation<0);
 
 
-    printf("¼öÁ¤¼º°ø!\n\n");
+    printf("ìˆ˜ì •ì„±ê³µ!\n\n");
 
 return 0;
 }
 
 
 int deleteData(Restaurant s[], int count){
-    if(count == 0){printf("µ¥ÀÌÅÍ¾øÀ½!\n\n");return count;}
+    if(count == 0){printf("ë°ì´í„°ì—†ìŒ!\n\n");return count;}
     listRes(s,count);
     int select;
-    printf("»èÁ¦ÇÒ ½Ä´çÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+    printf("ì‚­ì œí•  ì‹ë‹¹ì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”");
     scanf("%d",&select);
     if(select< 1 || select > count) {
-    printf("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù!\n\n");
+    printf("ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤!\n\n");
     return -1;
 }
 
     for(int i  = select-1; i<count; i++){
         s[i]=s[i+1];
 }
-    printf("»èÁ¦¿Ï·á!\n\n");
+    printf("ì‚­ì œì™„ë£Œ!\n\n");
     return --count;
 }
 
 
 void SaveData(Restaurant s[],int count){
-    if(count==0){printf("µ¥ÀÌÅÍ ¾øÀ½!\n\n");return;}
+    if(count==0){printf("ë°ì´í„° ì—†ìŒ!\n\n");return;}
     FILE *fp;
 
     fp = fopen("Restaurant_Data.txt","wt");
@@ -122,7 +122,7 @@ void SaveData(Restaurant s[],int count){
     for(int i = 0; i<count;i++){
         fprintf(fp,"%d %f %s\n",s[i].price,s[i].reputation,s[i].name);
     }
-    printf("ÀúÀå¿Ï·á!\n");
+    printf("ì €ì¥ì™„ë£Œ!\n");
     fclose(fp);
 
 printf("\n");
@@ -134,7 +134,7 @@ int loadData(Restaurant s[]){
 
     fp = fopen("Restaurant_Data.txt","rt");
     if(fp==NULL) {
-        printf("ÆÄÀÏÀÌ ¾ø½À´Ï´Ù!\n\n");return 0;
+        printf("íŒŒì¼ì´ ì—†ìŠµë‹ˆë‹¤!\n\n");return 0;
     }
     int i = 0;
     while(1){
@@ -143,77 +143,77 @@ int loadData(Restaurant s[]){
 
     i++;
     }
-        printf("Load ¼º°ø!\n\n");
+        printf("Load ì„±ê³µ!\n\n");
     return i;
 }
 
 
 void SearchName(Restaurant s[],int count){
- printf("Ã£°íÀÚ ÇÏ´Â ¾ÆÀÌÅÛÀÇ ÀÌ¸§À» Àû¾îÁÖ¼¼¿ä!\n");
+ printf("ì°¾ê³ ì í•˜ëŠ” ì‹ë‹¹ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì„¸ìš”!\n");
         int y_n = 0;
         char name[30];
         int enter;
         enter = getchar();
         fgets(name,30,stdin);
-    printf("No.      ÀÌ¸§       °¡°İ        ÆòÁ¡\n");
+    printf("No.      ì´ë¦„       ê°€ê²©        í‰ì \n");
         name[strlen(name)-1] = '\0';
         for(int i = 0; i<count;i++){
             if(strstr(s[i].name,name)){
-        printf("%d %15s   %5d¿ø     %5.1fÁ¡\n",i+1,s[i].name,s[i].price ,s[i].reputation);
+        printf("%d %15s   %5dì›     %5.1fì \n",i+1,s[i].name,s[i].price ,s[i].reputation);
             y_n++;
             }
         }
-        if(y_n == 0)printf("%sÀÇ °Ë»ö°á°ú°¡ ¾ø½À´Ï´Ù!\n",name);
+        if(y_n == 0)printf("%sì˜ ê²€ìƒ‰ê²°ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤!\n",name);
         printf("\n");
 }
 
 
 void SearchReputaion(Restaurant s[],int count){
 
-        printf("ÆòÁ¡À» ÀÔ·ÂÇØÁÖ¼¼¿ä!\n");
+        printf("í‰ì ì„ ì…ë ¥í•´ì£¼ì„¸ìš”!\n");
         float reputation;
        int y_n = 0;
         scanf("%f",&reputation);
-    printf("No.      ÀÌ¸§       °¡°İ        ÆòÁ¡\n");
+    printf("No.      ì´ë¦„       ê°€ê²©        í‰ì \n");
         for(int i = 0; i<count; i++){
             if(reputation <= s[i].reputation){
-        printf("%d %15s   %5d¿ø     %5.1fÁ¡\n",i+1,s[i].name,s[i].price ,s[i].reputation);
+        printf("%d %15s   %5dì›     %5.1fì \n",i+1,s[i].name,s[i].price ,s[i].reputation);
             y_n++;
         }
         }
 
-        if(y_n == 0)printf("%.1fº¸´Ù ÆòÁ¡ÀÌ ³ôÀº ½Ä´çÀÇ °Ë»ö°á°ú°¡ ¾ø½À´Ï´Ù!\n",reputation);
+        if(y_n == 0)printf("%.1fë³´ë‹¤ í‰ì ì´ ë†’ì€ ì‹ë‹¹ì˜ ê²€ìƒ‰ê²°ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤!\n",reputation);
         printf("\n");
 }
 
 void SearchPrice(Restaurant s[],int count){
-  printf("°¡°İ ÀÔ·ÂÇØÁÖ¼¼¿ä!\n");
+  printf("ì‹ë‹¹ì˜ ìŒì‹í‰ê· ê°€ê²©ì„ ì…ë ¥í•´ì£¼ì„¸ìš”!\n");
         int price;
        int y_n = 0;
         scanf("%d",&price);
-    printf("No.      ÀÌ¸§       °¡°İ        ÆòÁ¡\n");
+    printf("No.      ì´ë¦„       ê°€ê²©        í‰ì \n");
         for(int i = 0; i<count; i++){
             if(price >= s[i].price){
-        printf("%d %15s   %5d¿ø     %5.1fÁ¡\n",i+1,s[i].name,s[i].price ,s[i].reputation);
+        printf("%d %15s   %5dì›     %5.1fì \n",i+1,s[i].name,s[i].price ,s[i].reputation);
             y_n++;
         }
 
 }
 
-        if(y_n == 0)printf("%dº¸´Ù Æò±Õ°¡°İÀÌ ³·Àº ½Ä´çÀÇ °Ë»ö°á°ú°¡ ¾ø½À´Ï´Ù!\n",price);
+        if(y_n == 0)printf("%dë³´ë‹¤ í‰ê· ê°€ê²©ì´ ë‚®ì€ ì‹ë‹¹ì˜ ê²€ìƒ‰ê²°ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤!\n",price);
         printf("\n");
 }
 
 void SearchData(Restaurant s[],int count){
-    if(count == 0) {printf("µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù!\n\n");return;}
+    if(count == 0) {printf("ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤!\n\n");return;}
 
 while(1){
 
-   printf("°Ë»ö¸ğµå¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä!\
-    \n\n1.ÀÌ¸§À¸·Î Ã£±â\
-    \n2.ÆòÁ¡À¸·Î Ã£±â\
-    \n3.°¡°İÀ¸·Î Ã£±â\
-    \n4.¸ŞÀÎ¸Ş´º·Î °¡±â\n");
+   printf("ê²€ìƒ‰ëª¨ë“œë¥¼ ì„ íƒí•´ì£¼ì„¸ìš”!\
+    \n\n1.ì´ë¦„ìœ¼ë¡œ ì°¾ê¸°\
+    \n2.í‰ì ìœ¼ë¡œ ì°¾ê¸°\
+    \n3.ê°€ê²©ìœ¼ë¡œ ì°¾ê¸°\
+    \n4.ë©”ì¸ë©”ë‰´ë¡œ ê°€ê¸°\n");
 
     int select;
     scanf("%d",&select);
@@ -231,7 +231,7 @@ while(1){
 }
 
 else if(select == 4){
-    printf("°Ë»öÀ» Á¾·áÇÕ´Ï´Ù\n\n");
+    printf("ê²€ìƒ‰ì„ ì¢…ë£Œí•©ë‹ˆë‹¤\n\n");
     break;
 }
 
@@ -259,6 +259,6 @@ void sortName(Restaurant  *s, int count){
 void recommand(Restaurant *s, int count){
     srand(time(NULL));
     int i = rand()%count;
-    printf("¿À´ÃÀº %s ¾î¶§¿ä??\n%s %d %f\n",s[i].name, s[i].name, s[i].price, s[i].reputation);
+    printf("ì˜¤ëŠ˜ì€ %s ì–´ë•Œìš”??\n%s %d %f\n",s[i].name, s[i].name, s[i].price, s[i].reputation);
 }
 
