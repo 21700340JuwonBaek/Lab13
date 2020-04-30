@@ -32,7 +32,7 @@ printf("\n");
 
 
     int addData(Restaurant  *s){
-    printf("아이템의 이름을 입력해주세요\n");
+    printf("식당의 이름을 입력해주세요\n");
     char enter;
     enter = getchar();
 
