@@ -8,11 +8,11 @@ typedef struct {
 
 void readMenu(); //전체 메뉴(선택지)를 보여주는 함수
 
-void listRes(Restaurant  s[], int count); //전체 리스트를 보여주는 함수
+void listRes(Restaurant  *s[], int count); //전체 리스트를 보여주는 함수
 
-int addData(Restaurant  *s); //새로운 식당을 추가하는 함수
+int addData(Restaurant  **s); //새로운 식당을 추가하는 함수
 
-int updateData(Restaurant  *s, int count); //기존 등록된 식당을 수정하는 함수
+int updateData(Restaurant  *s[], int count); //기존 등록된 식당을 수정하는 함수
 
 int deleteData(Restaurant  *s, int count); //등록된 식당을 제거하는 함수
 
