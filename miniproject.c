@@ -135,3 +135,44 @@ else	printf("잘못된 번호입니다!\n");
 }
 
 
+
+int deleteData(Restaurant *s[], int count){
+
+if(count == 0){
+printf("데이터가 없습니다!\n");
+return 0;
+}
+listRes(s,count);
+printf("삭제하고싶은 데이터를 선택해주세요!\n");
+
+int select;
+do{
+scanf("%d",&select);
+if(select<0||select>count){
+printf("다시입력해주세요!\n");
+}
+
+}while(select<0||select>count);
+int i;
+for( i = select-1; i < count; i++){
+if(i == count -1)break;
+strcpy(s[i]->name,s[i+1]->name);
+s[i]->price = s[i+1]->price;
+s[i]->reputation = s[i+1]->reputation;
+}
+//free(s[count-1]->name);
+free(s[count-1]);
+return 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
