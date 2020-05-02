@@ -9,8 +9,9 @@ printf("1.식당추가\
 \n2.식당조회\
 \n3.식당업데이트\
 \n4.식당삭제\
-\n5.Save\
-\n6.Load\
+\n5.리스트 정렬(이름)\
+\n6.Save\
+\n7.Load\
 \n0.종료!\n");
 }
 
@@ -165,7 +166,21 @@ free(s[count-1]);
 return 1;
 }
 
+void sortName(Restaurant *s[], int count) {
+Restaurant *temp;
 
+for(int i=0;i<count;i++) {
+	for(int j=i+1;j<count;j++) {
+	if(strcmp(s[i]->name, s[j]->name)>0) {
+		temp = s[i];
+		s[i] = s[j];
+		s[j] = temp;
+	}
+	}
+}
+
+printf("정렬이 완료되었습니다.\n");
+}
 
 
 
