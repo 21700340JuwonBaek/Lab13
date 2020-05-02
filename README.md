@@ -12,5 +12,7 @@ mini project가 가지고 있는 기능
 
 팀 소개 및 팀원이 맡은 역할:
 저희는 4팀이며, 팀원은 저와 김연희 학우님입니다.
-김연희 학우님은 헤더파일 형성 및 main함수를 구현하는 역할을 담당하고
-저의 경우에는 제 파트너가 헤더파일을 형성하면 그것을 토대로 .c파일을 만드는 역할을 담당합니다.
+김연희 학우님은 헤더파일 생성 SearchData, SearchPrice, 
+SearchReputation, SearchName,sortName,sortPrice, recomand함수 구현
+
+저(백주원) : readMenu(), listRes, addData,updateData, deleteData, SaveData, loadData 구현.
