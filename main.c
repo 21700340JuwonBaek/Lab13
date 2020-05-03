@@ -17,6 +17,7 @@ else if(menu == 2) {listRes(res,count);}
 else if(menu == 3) {updateData(res,count);}
 else if(menu == 4) {count -= deleteData(res,count);}
 else if(menu == 5) {sortName(res, count);}
+else if(menu == 6) {sortPrice(res, count);}
 else if( menu == 0) break;
 else printf("다시입력해주세요!\n");
 }
