@@ -1,6 +1,7 @@
 #실행파일
 miniproject
-
+#데이터파일
+Restaurant_Data.txt
 # Prerequisites
 *.d
 
