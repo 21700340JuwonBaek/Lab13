@@ -3,9 +3,10 @@
 
 int main(void){
 
-int menu, count = 0;
+int menu;
 
 Restaurant *res[100];
+int count = loadData(res);
 
 while(1){
 readMenu();
@@ -19,6 +20,8 @@ else if(menu == 4) {count -= deleteData(res,count);}
 else if(menu == 5) {sortName(res, count);}
 else if(menu == 6) {sortPrice(res, count);}
 else if(menu==7) {recommand(res, count);}
+else if(menu == 8){SaveData(res,count);}
+else if(menu == 9){count = loadData(res);}
 else if( menu == 0) break;
 else printf("다시입력해주세요!\n");
 }

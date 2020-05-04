@@ -212,6 +212,42 @@ printf("데이터가 없습니다!!\n\n");
 }
 }
 
+void SaveData(Restaurant *s[],int count){
+if(count == 0) {printf("데이터 없음!\n\n");return;}
+FILE *fp = fopen("Restaurant_Data.txt","wt");
+for(int i = 0 ; i < count; i++){
+fprintf(fp,"%d %f %s\n",s[i]->price,s[i]->reputation,s[i]->name);
+}
+printf("저장완료!\n\n");
+fclose(fp);
+}
+
+
+
+int loadData(Restaurant *s[]){
+FILE *fp = fopen("Restaurant_Data.txt","rt");
+if(fp == NULL){
+printf("파일이 없습니다!\n\n");return 0;}
+int i = 0;
+while(1){
+s[i] = (Restaurant *)malloc(sizeof(Restaurant));
+fscanf(fp,"%d %f %[^\n]s",&s[i]->price,&s[i]->reputation,s[i]->name);
+if(feof(fp)!=0) break;
+i++;
+}
+printf("Load 성공!!\n\n");
+return i;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
