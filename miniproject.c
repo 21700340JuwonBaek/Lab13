@@ -11,8 +11,9 @@ printf("1.식당추가\
 \n4.식당삭제\
 \n5.리스트 정렬(이름)\
 \n6.리스트 정렬(가격)\
-\n7.Save\
-\n8.Load\
+\n7.식당 추천\
+\n8.Save\
+\n9.Load\
 \n0.종료!\n");
 }
 
@@ -180,7 +181,7 @@ for(int i=0;i<count;i++) {
 	}
 }
 
-printf("정렬이 완료되었습니다.\n");
+printf("정렬이 완료되었습니다.\n\n");
 }
 
 void sortPrice(Restaurant *s[], int count) {
@@ -195,11 +196,21 @@ for(int i=0;i<count;i++) {
 	}
 	}
 }
-printf("정렬이 완료되었습니다.\n");
+printf("정렬이 완료되었습니다.\n\n");
 }
 
 
+void recommand(Restaurant *s[], int count) {
+srand(time(NULL));
 
+if(count>0) {
+	int num = rand() % count + 0;
+
+	printf("오늘의 추천 식당은 %s 입니다.\n\n", s[num]->name);
+}else{
+printf("데이터가 없습니다!!\n\n");
+}
+}
 
 
 
