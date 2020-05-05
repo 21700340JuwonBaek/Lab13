@@ -201,12 +201,13 @@ printf("정렬이 완료되었습니다.\n\n");
 
 
 void recommand(Restaurant *s[], int count) {
+
 srand(time(NULL));
 
 if(count>0) {
-	int num = rand() % count + 0;
-
-	printf("오늘의 추천 식당은 %s 입니다.\n\n", s[num]->name);
+	int num = rand() % count ;
+	printf("오늘은 %s 어때요???\n\n", s[num]->name);
+	printf("이름 : %s, 가격 : %d, 평점: %.1f\n",s[num]->name,s[num]->price,s[num]->reputation);
 }else{
 printf("데이터가 없습니다!!\n\n");
 }
