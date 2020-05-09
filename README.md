@@ -13,6 +13,6 @@ mini project가 가지고 있는 기능
 팀 소개 및 팀원이 맡은 역할:
 저희는 4팀이며, 팀원은 저와 김연희 학우님입니다.
 김연희 학우님은 헤더파일 생성 SearchData, SearchPrice, 
-SearchReputation, SearchName,sortName,sortPrice, recomand함수 구현
+SearchReputation, sortName,sortPrice, recomand함수 구현
 
-저(백주원) : readMenu(), listRes, addData,updateData, deleteData, SaveData, loadData 구현.
+저(백주원) : readMenu(), listRes, addData,updateData, deleteData, SaveData, loadData ,SearchName 구현.
