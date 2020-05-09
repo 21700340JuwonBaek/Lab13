@@ -22,6 +22,7 @@ else if(menu == 6) {sortPrice(res, count);}
 else if(menu==7) {recommand(res, count);}
 else if(menu == 8){SaveData(res,count);}
 else if(menu == 9){count = loadData(res);}
+else if(menu == 10)SearchName(res,count); 
 else if( menu == 0) break;
 else printf("다시입력해주세요!\n");
 }

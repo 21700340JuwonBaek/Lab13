@@ -14,6 +14,7 @@ printf("1.식당추가\
 \n7.식당 추천\
 \n8.Save\
 \n9.Load\
+\n10.검색\
 \n0.종료!\n");
 }
 
@@ -240,7 +241,23 @@ printf("Load 성공!!\n\n");
 return i;
 }
 
-
+void SearchName(Restaurant *s[], int count){
+printf("찾고자 하는 식당의 이름을 입력해주세요!\n");
+int y_n = 0;
+char name[30];
+int enter;
+enter = getchar();
+scanf("%[^\n]s",name);
+printf("No.	이름	가격	평점\n");
+for(int i = 0 ; i < count ; i++){
+if(strstr(s[i]->name,name)){
+printf("%d %15s %d원	%.1f점\n",i+1,s[i]->name,s[i]->price,s[i]->reputation);
+y_n += 1;
+}
+}
+if(y_n == 0) printf("%s의 검색결과가 없습니다!\n",name);
+printf("\n");
+}
 
 
 
