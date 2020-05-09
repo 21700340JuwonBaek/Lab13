@@ -1,5 +1,3 @@
-
-
 typedef struct {
     char name[30]; //식당명
     float reputation;//평점

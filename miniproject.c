@@ -241,6 +241,19 @@ printf("Load 성공!!\n\n");
 return i;
 }
 
+void SearchData(Restaurant *s[], int count) {
+int search;
+
+printf("무엇으로 검색하시겠습니까? (1.이름 2.가격 3.평점 0.취소)\n");
+scanf("%d", &search);
+
+if(search==0) {
+	printf("취소되었습니다.\n");
+}else if(search==1){
+	searchName(s, count);
+}
+}
+
 void SearchName(Restaurant *s[], int count){
 printf("찾고자 하는 식당의 이름을 입력해주세요!\n");
 int y_n = 0;
