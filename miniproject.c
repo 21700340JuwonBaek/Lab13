@@ -244,13 +244,19 @@ return i;
 void SearchData(Restaurant *s[], int count) {
 int search;
 
+while(1){
 printf("무엇으로 검색하시겠습니까? (1.이름 2.가격 3.평점 0.취소)\n");
 scanf("%d", &search);
 
 if(search==0) {
 	printf("취소되었습니다.\n");
+	break;
 }else if(search==1){
-	searchName(s, count);
+	SearchName(s, count);
+}else if(search==2) {
+	SearchPrice(s, count);
+}
+
 }
 }
 
@@ -272,7 +278,22 @@ if(y_n == 0) printf("%s의 검색결과가 없습니다!\n",name);
 printf("\n");
 }
 
+void SearchPrice(Restaurant *s[], int count) {
+printf("찾고자 하는 가격을 입력해주세요!\n");
+int search;
+scanf("%d", &search);
 
+int y_n=0;
+
+for(int i=0;i<count;i++) {
+if(search == s[i]->price) {
+printf("%d %15s %d원	%.1f점\n", i+1, s[i]->name, s[i]->price, s[i]->reputation);
+y_n++;
+}
+}
+
+if(y_n==0) printf("검색한 가격의 식당이 없습니다!\n\n");
+}
 
 
 
