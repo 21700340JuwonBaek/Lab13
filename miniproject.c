@@ -281,7 +281,7 @@ printf("\n");
 }
 
 void SearchPrice(Restaurant *s[], int count) {
-printf("식당의 가격을 입력해주세요!\n");
+printf("식당의 가격을 입력해주세요!(입력한 가격 이하의 식당이 출력됩니다)\n");
 int search;
 scanf("%d", &search);
 
