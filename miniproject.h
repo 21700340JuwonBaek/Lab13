@@ -22,7 +22,7 @@ void SearchData(Restaurant  *s[], int count); //검색하는 함수
 
 void SearchPrice(Restaurant *s[],int count);//가격으로 검색하기
 
-void SearchReputaion(Restaurant *s[],int count);//평점으로 검색하기
+void SearchReputation(Restaurant *s[],int count);//평점으로 검색하기
 
 void SearchName(Restaurant *s[],int count);//이름으로 검색하기
 
