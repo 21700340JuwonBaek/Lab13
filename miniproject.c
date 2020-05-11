@@ -255,8 +255,9 @@ if(search==0) {
 	SearchName(s, count);
 }else if(search==2) {
 	SearchPrice(s, count);
+}else if(search==3) {
+	SearchReputation(s, count);
 }
-
 }
 }
 
@@ -295,11 +296,23 @@ y_n++;
 if(y_n==0) printf("검색한 가격의 식당이 없습니다!\n\n");
 }
 
+void SearchReputation(Restaurant *s[], int count) {
+printf("찾고자 하는 평점을 입력해주세요!\n");
+float search;
+scanf("%f", &search);
 
+int y_n=0;
 
+for(int i=0;i<count;i++) {
+if(search == s[i]->reputation) {
+printf("%d %15s %d원	%.1f점\n", i+1, s[i]->name, s[i]->price, s[i]->reputation);
+y_n++;
+}
+}
 
+if(y_n==0) printf("검색한 평점의 식당이 없습니다!\n\n");
 
-
+}
 
 
 
