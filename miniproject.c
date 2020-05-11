@@ -48,7 +48,7 @@ return 1;
 void listRes(Restaurant *s[], int count){
 if (count == 0) {printf("데이터가 없습니다!!\n\n");return;}
 
-printf("No.	이름	가격	평점\n");
+printf("No.	이름\t	가격	   평점\n");
 for(int i = 0 ; i < count; i++){
 printf("%d %15s   %d원	%5.1f점\n",i+1,s[i]->name,s[i]->price,s[i]->reputation);
 }
@@ -208,7 +208,7 @@ srand(time(NULL));
 if(count>0) {
 	int num = rand() % count ;
 	printf("오늘은 %s 어때요???\n\n", s[num]->name);
-	printf("이름 : %s, 가격 : %d, 평점: %.1f\n",s[num]->name,s[num]->price,s[num]->reputation);
+	printf("이름 : %s\t 가격 : %d원\t 평점: %.1f점\n",s[num]->name,s[num]->price,s[num]->reputation);
 }else{
 printf("데이터가 없습니다!!\n\n");
 }
@@ -243,7 +243,7 @@ return i;
 
 void SearchData(Restaurant *s[], int count) {
 int search;
-
+if(count == 0){printf("데이터가 없습니다!\n\n");return;}
 while(1){
 printf("무엇으로 검색하시겠습니까? (1.이름 2.가격 3.평점 0.취소)\n");
 scanf("%d", &search);
@@ -258,6 +258,7 @@ if(search==0) {
 }else if(search==3) {
 	SearchReputation(s, count);
 }
+else {printf("잘못된 입력입니다! 다시 입력해주세요!\n");}
 }
 }
 
@@ -268,10 +269,10 @@ char name[30];
 int enter;
 enter = getchar();
 scanf("%[^\n]s",name);
-printf("No.	이름	가격	평점\n");
+printf("No.	이름\t	가격	   평점\n");
 for(int i = 0 ; i < count ; i++){
 if(strstr(s[i]->name,name)){
-printf("%d %15s %d원	%.1f점\n",i+1,s[i]->name,s[i]->price,s[i]->reputation);
+printf("%d %15s   %d원	%5.1f점\n",y_n+1,s[i]->name,s[i]->price,s[i]->reputation);
 y_n += 1;
 }
 }
@@ -280,15 +281,16 @@ printf("\n");
 }
 
 void SearchPrice(Restaurant *s[], int count) {
-printf("찾고자 하는 가격을 입력해주세요!\n");
+printf("식당의 가격을 입력해주세요!\n");
 int search;
 scanf("%d", &search);
 
 int y_n=0;
 
+printf("No.	이름\t	가격	   평점\n");
 for(int i=0;i<count;i++) {
-if(search == s[i]->price) {
-printf("%d %15s %d원	%.1f점\n", i+1, s[i]->name, s[i]->price, s[i]->reputation);
+if(search >= s[i]->price) {
+printf("%d %15s   %d원	%5.1f점\n",y_n+1,s[i]->name,s[i]->price,s[i]->reputation);
 y_n++;
 }
 }
@@ -297,15 +299,16 @@ if(y_n==0) printf("검색한 가격의 식당이 없습니다!\n\n");
 }
 
 void SearchReputation(Restaurant *s[], int count) {
-printf("찾고자 하는 평점을 입력해주세요!\n");
+printf("몇점 이상의 식당을 원하시는가요?\n");
 float search;
 scanf("%f", &search);
 
 int y_n=0;
 
+printf("No.	이름\t	가격	   평점\n");
 for(int i=0;i<count;i++) {
-if(search == s[i]->reputation) {
-printf("%d %15s %d원	%.1f점\n", i+1, s[i]->name, s[i]->price, s[i]->reputation);
+if(search <= s[i]->reputation) {
+printf("%d %15s   %d원	%5.1f점\n",y_n+1,s[i]->name,s[i]->price,s[i]->reputation);
 y_n++;
 }
 }
